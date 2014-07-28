@@ -9,6 +9,7 @@
 
 /*** Color ***/
 $primary-color: #FF9628;
+$body-color: #323232;
 
 /*** Spacing ***/
 $body-padding: 1em;
@@ -16,12 +17,20 @@ $body-padding: 1em;
 body {
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
-   font-size:14px;
+   font-size:16px;
+   color: $body-color;
 }
 
 h1 { font-size:4.5em; }
 h2 { font-size:2em; }
 h3 { font-size:1.5em; }
+
+p {
+  font-family:"Helvetica Neue";
+  font-weight:400;
+  margin-top:1em;
+  line-height:1.2;
+}
 
 header {
   @include clearfix();
@@ -65,6 +74,52 @@ header {
       position:absolute;
       bottom:10px;
       right:10px;
+    }
+  }
+
+  #main-content {
+    padding: $body-padding;
+
+    section {
+      @include clearfix();
+      margin-top:2em;
+
+      >div {
+        width:40%; 
+        max-width:450px;
+
+        img { 
+          display:block;
+          margin:auto;
+          width:100%;
+          max-width:328px;
+        }
+      }
+      article { 
+        width:60%; 
+        padding: $body-padding;
+
+        p {
+          max-width:650px;
+        }
+      }
+
+      &:nth-child(odd) {
+        >div {
+          float:left;
+        }
+        article {
+          float:right;
+        }
+      }
+      &:nth-child(even) {
+        >div { 
+          float:right; 
+        }
+        article {
+          float:left;
+        }
+      }
     }
   }
 }
