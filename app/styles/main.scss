@@ -9,7 +9,7 @@
 
 /*** Color ***/
 $primary-color: #FF9628;
-$body-color: #323232;
+$body-color: #555;
 
 /*** Spacing ***/
 $body-padding: 1em;
@@ -22,7 +22,7 @@ body {
 }
 
 h1 { font-size:4.5em; }
-h2 { font-size:2em; }
+h2 { font-size:3em; font-weight:100; }
 h3 { font-size:1.5em; }
 
 p {
@@ -71,6 +71,7 @@ header {
     }
 
     h2 {
+      font-size:2em;
       position:absolute;
       bottom:10px;
       right:10px;
@@ -82,25 +83,31 @@ header {
 
     section {
       @include clearfix();
+      margin:auto;
       margin-top:2em;
+      max-width:960px;
 
       >div {
-        width:40%; 
-        max-width:450px;
+        width:50%; 
 
         img { 
-          display:block;
-          margin:auto;
           width:100%;
-          max-width:328px;
         }
       }
       article { 
-        width:60%; 
-        padding: $body-padding;
+        width:50%; 
+        padding: 1em;
 
-        p {
-          max-width:650px;
+        h2 {
+          color:$primary-color;
+          margin-bottom:0.5em;
+        }
+
+        li {
+          list-style:disc;
+          margin-left:1em;
+          font-size:1.5em;
+          margin-bottom:1em;
         }
       }
 
