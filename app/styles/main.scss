@@ -35,14 +35,12 @@ p {
 }
 
 header {
-  @include clearfix();
   padding: 0.5em $body-padding;
   position:relative;
   z-index:100;
 
   h1 {
     color: $primary-color;
-    float:left;
   }
 
   #actionButtons {
@@ -155,6 +153,58 @@ header {
         article {
           float:left;
           padding-right:2em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  header {
+    overflow:visible; 
+
+    #actionButtons {
+      position:absolute;
+      top:88px;
+    }
+  }
+  #main {
+    #main-banner {
+      h2 {
+        width:100%;
+        text-align:center;
+      }
+      img {
+        top:85px;
+      }
+    }
+    #main-content {
+      section {
+        h2 {
+          letter-spacing:-2px;
+        }
+
+        >div {
+          width:100%;
+          max-width:448px;
+          margin:auto;
+        }
+
+        article {
+          width:100%;
+          max-width:448px;
+          margin:auto;
+          margin-top:1em;
+        }
+
+        &:nth-child(odd), &:nth-child(even) {
+          >div {
+            float:none;
+          }
+          article {
+            float:none;
+            padding:0px;
+          }
         }
       }
     }
