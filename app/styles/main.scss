@@ -25,6 +25,8 @@ h1 { font-size:4.5em; }
 h2 { font-size:3em; font-weight:100; }
 h3 { font-size:1.5em; }
 
+a, a:hover, a:visited { color:$primary-color; text-decoration:none; }
+
 p {
   font-family:"Helvetica Neue";
   font-weight:400;
@@ -35,20 +37,40 @@ p {
 header {
   @include clearfix();
   padding: 0.5em $body-padding;
+  position:relative;
+  z-index:100;
 
   h1 {
     color: $primary-color;
     float:left;
   }
 
-  a {
-    display:block;
-    float:right;
-    position:relative;
-    top:11px;
+  #actionButtons {
+    position:fixed;
+    top:13px;
+    right:0px;
+    padding:11px;
+    background-color:rgba(255, 255, 255, 0.2);
 
-    &#app-store {
-      width:135px;
+    a {
+      display:block;
+      float:right;
+
+      &#supportButton {
+        width:135px;
+        height:40px;
+        font-size:1.25em;
+        color:white;
+        background-color:$primary-color;
+        text-align:center;
+        margin-right:11px;
+        border-radius:4px;
+        padding-top:11px;
+      }
+
+      &#app-store {
+        width:135px;
+      }
     }
   }
 }
