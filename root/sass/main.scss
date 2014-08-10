@@ -1,0 +1,104 @@
+@import "compass";
+@import "compass/reset";
+
+/* apply a natural box layout model to all elements */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/*** Color ***/
+$primary-color: #FF9628;
+$body-color: #555;
+
+/*** Spacing ***/
+$body-padding: 1em;
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   font-size:16px;
+   color: white;
+}
+
+h1 { font-size:3.5em; }
+h2 { font-size:2em; font-weight:100; }
+h3 { font-size:1.5em; }
+
+a, a:hover, a:visited { color:white; text-decoration:none; }
+
+p {
+  font-family:"Helvetica Neue";
+  font-weight:400;
+  margin-top:1em;
+  line-height:1.2;
+}
+
+#rootPage {
+  a {
+    @include clearfix();
+    display:block;
+    width:80%;
+    max-width:700px;
+    padding:2em;
+    margin:auto;
+    position:relative;
+    top:100px;
+    background-color:$primary-color;
+    border-radius:10px;
+    transition:all 0.15s ease-in-out;
+
+    &:hover {
+      background-color:darken($primary-color, 5%);
+    }
+
+    img { 
+      width:150px;
+      height:150px;
+      display:block;
+      float:left;
+    }
+
+    div {
+      float:left;
+      position:relative;
+      left:1em;
+      top:2em;
+    }
+  }
+}
+
+@media (max-width:720px) {
+  #rootPage {
+    a {
+      padding:1em;
+
+      img, div {
+        float:none;
+      }
+
+      img {
+        margin:auto;
+      }
+
+      div {
+        left:0;
+        top:1em;
+        margin-bottom:1em;
+      }
+    }
+  }
+}
+
+@media (max-width:480px) {
+  h1 {
+    font-size:2.5em;
+  }
+  h2 {
+    font-size:1.5em;
+  }
+}
+
+
+
+

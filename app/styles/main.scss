@@ -217,3 +217,17 @@ header {
     }
   }
 }
+
+
+#rootPage {
+  section {
+    width:80%;
+    max-width:600px;
+    padding:2em;
+    margin:auto;
+    position:relative;
+    top:200px;
+    background-color:$primary-color;
+    border-radius:4px;
+  }
+}
