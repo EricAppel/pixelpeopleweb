@@ -41,11 +41,18 @@ header {
 
   h1 {
     color: $primary-color;
+    line-height:0.8;
+
+    span {
+      display:block;
+      font-size:0.33em;
+      margin-left:4px;
+    }
   }
 
   #actionButtons {
     position:fixed;
-    top:13px;
+    top:15px;
     right:0px;
     padding:11px;
     background-color:rgba(255, 255, 255, 0.2);
@@ -165,7 +172,7 @@ header {
 
     #actionButtons {
       position:absolute;
-      top:88px;
+      top:90px;
     }
   }
   #main {
